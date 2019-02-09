@@ -23,6 +23,28 @@
         <link rel="stylesheet" href="css/list.css" type="text/css">
         <link rel="site icon" href="waimai.png">
 
+<style>
+body {
+  padding: 50px 5%;
+  --primary-color: #ff922b;
+  --primary-color-dark: #e8590c;
+}
+.btn {
+  margin-top: 30px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn:hover, .card:hover {
+  background-color: var(--primary-color-dark);
+}
+.card {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+</style>
     </head>
 
     <body>
@@ -40,7 +62,7 @@
           };
           firebase.initializeApp(config);
         </script>
-		
+
         <div class="container">
             <div class="card restaurant-card mt-2 ml-2 mr-2">
                 <div class="row mt-2 d-flex justify-content-between">
