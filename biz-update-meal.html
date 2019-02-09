@@ -20,6 +20,9 @@
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
         <link rel="site icon" href="waimai.png">
 
+        <script src='./scripts/db.js'></script>
+        <script src='./scripts/selling.js'></script>
+        <script src='./scripts/meal_view.js'></script>
         <style>
 body {
   padding: 30px 10% 100px;
@@ -56,62 +59,87 @@ h3 {
                 <label for="open-time">Estimated Open Time</label>
                 <input type="time" class="form-control" id="open-time" placeholder="12:00:00">
             </div>
+
             <div class="form-group">
                 <label for="open-location">Estimated Location</label>
                 <input type="text" class="form-control" id="open-location" placeholder="E.g. cyert">
             </div>
+
             <div class='sep'></div>
             <div class="form-group">
                 <label for="meal-name-A">Meal A Name</label>
                 <input type="text" class="form-control" id="meal-name-A" placeholder="E.g. Meal A">
             </div>
+
             <div class="form-group">
                 <label for="stock-A">Total Stock for Meal A</label>
                 <input type="number" class="form-control" id="stock-A" placeholder="50">
             </div>
+
             <div class="form-group">
                 <label for="price-A">Price for Meal A</label>
                 <input type="number" class="form-control" id="price-A" placeholder="8">
             </div>
+
             <div class="form-group">
                 <label for="meal-description-A">Description for Meal A</label>
                 <textarea class="form-control" id="meal-description-A" rows="3"></textarea>
             </div>
+
             <div class='sep'></div>
             <div class="form-group">
                 <label for="meal-name-B">Meal B Name</label>
                 <input type="text" class="form-control" id="meal-name-B" placeholder="E.g. Meal B">
             </div>
+
             <div class="form-group">
                 <label for="stock-B">Total Stock for Meal B</label>
                 <input type="number" class="form-control" id="stock-B" placeholder="50">
             </div>
+
             <div class="form-group">
                 <label for="price-B">Price for Meal B</label>
                 <input type="number" class="form-control" id="price-B" placeholder="8">
             </div>
+
             <div class="form-group">
                 <label for="meal-description-B">Description for Meal B</label>
                 <textarea class="form-control" id="meal-description-B" rows="3"></textarea>
             </div>
-            <div class='sep'></div>
-            <div class="form-group">
-                <label for="meal-name-C">Meal C Name</label>
-                <input type="text" class="form-control" id="meal-name-C" placeholder="E.g. Meal C">
-            </div>
-            <div class="form-group">
-                <label for="stock-C">Total Stock for Meal C</label>
-                <input type="number" class="form-control" id="stock-C" placeholder="50">
-            </div>
-            <div class="form-group">
-                <label for="price-C">Price for Meal C</label>
-                <input type="number" class="form-control" id="price-C" placeholder="8">
-            </div>
-            <div class="form-group">
-                <label for="meal-description-C">Description for Meal C</label>
-                <textarea class="form-control" id="meal-description-C" rows="3"></textarea>
-            </div>
-            <button id='submit' class='btn btn-primary'>Submit</button>
+            
+            <script>
+                function update_meals() {
+                  const db = firebase.firestore()
+                  const ref = db.collection('users').doc(window.localStorage.user)
+                  var newAname = document.getElementById('meal-name-A').value;
+                  if (newAname != ""){
+                        ref.update({ "mealAq": document.getElementById('stock-A').value });
+                        ref.update({ "mealAName": newAname });
+                        ref.update({ "priceA": document.getElementById('price-A').value });
+                        ref.update({ "descriptionA": document.getElementById('meal-description-A').value });
+                    }
+                    else{
+                        ref.update({ "mealAq": 0 });
+                        ref.update({ "mealAName": "" });
+                        ref.update({ "priceA": 0 });
+                        ref.update({ "descriptionA": "" });
+                    }
+                    var newBname =document.getElementById('meal-name-B').value
+                    if (newBname != ""){
+                    ref.update({ "mealBq": document.getElementById('stock-B').value });
+                    ref.update({ "mealBName": newBname });
+                    ref.update({ "priceB": document.getElementById('price-B').value });
+                    ref.update({ "descriptionB": document.getElementById('meal-description-B').value });
+                    }
+                    else{
+                    ref.update({ "mealBq": 0 });
+                    ref.update({ "mealBName": "" });
+                    ref.update({ "priceB": 0 });
+                    ref.update({ "descriptionB": "" });
+                    }
+                }
+            </script>
+            <button onclick = "update_meals();" id='submit' class='btn btn-primary'>Submit</button>
         </form>
 
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>

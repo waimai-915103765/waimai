@@ -21,16 +21,9 @@ document.getElementById('submit').addEventListener('click', e => {
     price: document.getElementById('price-B').value,
     description: document.getElementById('meal-description-B').value
   }
-  const mealC = {
-    name: document.getElementById('meal-name-C').value,
-    stock: document.getElementById('stock-C').value,
-    price: document.getElementById('price-C').value,
-    description: document.getElementById('meal-description-C').value
-  }
   console.log(open_time)
   console.log(open_loc)
   console.log(mealA)
   console.log(mealB)
-  console.log(mealC)
   window.location.replace('./selling.html')
 })
