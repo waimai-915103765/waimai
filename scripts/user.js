@@ -20,20 +20,15 @@ function new_user(user_info) {
   // TODO check input validity (omit in prototyping)
 
   // initialize
-  const firebase = require('firebase')
-  require('firebase/firestore')
   const db = firebase.firestore()
-  let new_user_info = {}
-
-  // extract common info
-  new_user_info = {
-    user_info.name,
-    user_info.username,
-    user_info.password,
-    user_info.user_type,
-    user_info.phone,
-    user_info.email,
-    user_info.description
+  let new_user_info = {
+    name: user_info.name,
+    username: user_info.username,
+    password: user_info.password,
+    user_type: user_info.user_type,
+    phone: user_info.phone,
+    email: user_info.email,
+    description: user_info.description
   }
 
   /*
