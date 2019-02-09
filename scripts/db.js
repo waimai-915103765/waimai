@@ -25,6 +25,10 @@ function user_info(username) {
 
 function all_biz(username) {
   const db = firebase.firestore()
-  return db.collection('users').where('user_type', '==', true)
+  return db.collection('users').where('user_type', '==', true).get().then(snapshot => {
+    let biz = []
+    snapshot.docs.forEach(doc => biz.push(doc.data()))
+    return biz
+  })
 }
 
