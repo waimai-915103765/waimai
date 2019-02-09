@@ -15,10 +15,12 @@
 
         <!-- bootstrap CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="css/list.css" type="text/css">
 
     </head>
 
@@ -39,34 +41,55 @@
         </script>
 		
         <div class="container">
-            <div class="row card">
-                <div class="card-header">
-                Meng Cha
+            <div class="card restaurant-card mt-2 ml-2 mr-2">
+                <div class="row mt-2 d-flex justify-content-between">
+                    <div>
+                        <span class="restaurant-name">Meng Cha</span>
+                    </div>
+                    <div>
+                        <span class="stock-num">42</span>
+                        <span class="stock-num-text"> left</span>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item stock-num">42 left</li>
-                <li class="list-group-item open-until">Until 12:45pm</li>
-                <li class="list-group-item location">Cyert</li>
-                </ul>
+                <div class="row d-flex justify-content-between">
+                    <div>
+                        <span class="open-until-text">until </span>
+                        <span class="open-until">12:45pm</span>
+                    </div>
+                    <div>
+                        <span class="location">Cyert</span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="container">
-            <div class="row card restaurant-card">
-                <div class="card-header">
-                Fu Cun
+            <div class="card restaurant-card mt-2 ml-2 mr-2">
+                <div class="row d-flex justify-content-between">
+                    <div>
+                        <span class="restaurant-name">Fu Cun</span>
+                    </div>
+                    <div>
+                        <span class="stock-num">20</span>
+                        <span class="stock-num-text"> left</span>
+                    </div>
                 </div>
-                <ul class="list-group list-group-flush">
-                <li class="list-group-item stock-num">16 left</li>
-                <li class="list-group-item open-until">Until 14:10pm</li>
-                <li class="list-group-item location">Hunt</li>
-                </ul>
+                <div class="row d-flex justify-content-between">
+                    <div>
+                        <span class="open-until-text">until </span>
+                        <span class="open-until">14:10pm</span>
+                    </div>
+                    <div>
+                        <span class="location">Hunt</span>
+                    </div>
+                </div>
             </div>
+
         </div>
 
         <div class="container">
-            <div class="row">
-                <a class="btn btn-primary" href="map.html" role="button">Go to map view</a>
+            <div class="row mt-2 ml-2 mr-2">
+                <a href="map.html" class="btn btn-outline-primary btn-block">Go to map view</span></a>
             </div>
         </div>
 
