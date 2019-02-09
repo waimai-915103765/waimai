@@ -77,3 +77,9 @@ function login(username, password) {
   window.location.replace('./index.html')
 }
 
+function is_user(username) {
+  const db = firebase.firestore()
+  const ref = db.collection('users').doc(username)
+  return ref.get().then(doc => doc.exists)
+}
+
