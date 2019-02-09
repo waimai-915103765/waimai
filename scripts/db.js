@@ -14,7 +14,7 @@ function get_loc(username) {
 function set_loc(username, location) {
   const db = firebase.firestore()
   const ref = db.collection('users').doc(username)
-  ref.update({ location: location })
+  ref.update({ "location": location })
 }
 
 function user_info(username) {
