@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Browser Location</title>
+    </head>
+    <body>
+        <script src="https://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            var platform = new H.service.Platform({
+                "app_id": "xZmxyj2SRvUqNP1Ea97y",
+                "app_code": "bxRlLLx05eqG3_9St7H9pw"
+            });
+            var geocoder = platform.getGeocodingService();
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    geocoder.reverseGeocode(
+                        {
+                            mode: "retrieveAddresses",
+                            maxresults: 1,
+                            prox: position.coords.latitude + "," + position.coords.longitude
+                        }, data => {
+                            alert("The nearest address to your location is:\n" + data.Response.View[0].Result[0].Location.Address.Label);
+                        }, error => {
+                            console.error(error);
+                        }
+                    );
+                });
+            } else {
+                console.error("Geolocation is not supported by this browser!");
+            }
+        </script>
+    </body>
+</html>
