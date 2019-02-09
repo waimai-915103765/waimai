@@ -30,7 +30,36 @@
         <link rel="site icon" href="waimai.png">
 
     </head>
+<style>
+body {
+  padding: 50px 10%;
+  --primary-color: #ff922b;
+  --primary-color-dark: #e8590c;
+}
+.btn {
+  margin-top: 30px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+.btn:hover, .card:hover {
+  background-color: var(--primary-color-dark);
+}
+.card {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+h3 {
+  margin: 30px 0;
+  padding-bottom: 20px;
+  border-bottom: 3.8px solid var(--primary-color-dark);
+}
+</style>
     <body>
+      <h3>Real-time Updates</h3>
+
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
         <script>
           // Initialize Firebase
@@ -49,7 +78,7 @@
         <script src='./scripts/selling.js'></script>
         <div class="container">
             <div class="row">
-                <button onclick = "store_location();">Update My Location </button>
+                <button class='btn btn-primary'onclick = "store_location();">Update My Location </button>
             </div>
             <script>
                 function store_location(){
@@ -62,7 +91,7 @@
 
                     if(navigator.geolocation){
                         navigator.geolocation.getCurrentPosition
-                        (position => 
+                        (position =>
                             {
                                 var newCor = {
                                     lat: position.coords.latitude,
@@ -78,11 +107,11 @@
             </script>
 
             <div class="row">
-                <button onclick = "sellA();"> Sell Meal A </button>
+                <button class='btn btn-primary' onclick = "sellA();"> Sell Meal A </button>
             </div>
 
             <div class="row">
-                <button onclick = "sellB();"> Sell Meal B </button>
+                <button class='btn btn-primary' onclick = "sellB();"> Sell Meal B </button>
             </div>
 
         </form>
