@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 
-        <title>Wai Mai</title>
+        <title>Log In - Wai Mai</title>
 
         <meta name="keywords" content="chinese food, CMU, wai mai" />
         <meta name="author" content="Wai Mai Co">
@@ -18,24 +18,24 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
-
         <link rel="site icon" href="waimai.png">
-
     </head>
 
     <body>
-        <form>
+        <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand h1">Log In</span>
+        </nav>
+        <form class="ml-3 mr-3" style="text-align:center">
             <div class="form-group">
                 <label for="exampleInputUsername">Username</label>
-                <input type="username" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Enter username">
-                <small id="emailHelp" class="form-text text-muted">Your username is the one you created when you registered with us.</small>
+                <input type="username" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Username">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
             </div>
-            <a id='login' class="btn btn-primary text-white">Log In</a>
-            <button href="register.html" class="btn btn-primary">Register</button>
+            <a id='login' class="btn btn-primary btn-lg text-white mr-2">Log In</a>
+            <a href="register.html" id='register' class="btn btn-primary btn-lg text-white ml-2">Register</a>
         </form>
 
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
@@ -51,16 +51,16 @@
           };
           firebase.initializeApp(config);
         </script>
-      <script src='./scripts/user.js'></script>
+        <script src='./scripts/user.js'></script>
 
-      <script>
-const login_btn = document.getElementById('login')
-login_btn.addEventListener('click', function () {
-  const username = document.getElementById('exampleInputUsername').value
-  const password = document.getElementById('exampleInputPassword').value
-  login(username, password) // perform login action
-})
-      </script>
+        <script>
+            const login_btn = document.getElementById('login')
+            login_btn.addEventListener('click', function () {
+              const username = document.getElementById('exampleInputUsername').value
+              const password = document.getElementById('exampleInputPassword').value
+              login(username, password) // perform login action
+            })
+        </script>
 
     </body>
 </html>
