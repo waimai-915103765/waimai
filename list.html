@@ -1,73 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+    <head>
 
-		<title>Wai Mai</title>
+        <title>Wai Mai</title>
 
-		<meta name="keywords" content="chinese food, CMU, wai mai" />
-		<meta name="author" content="Wai Mai Co">
-		<meta name="description" content="Alternative food options for CMU kids"/>
-	  	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="chinese food, CMU, wai mai" />
+        <meta name="author" content="Wai Mai Co">
+        <meta name="description" content="Alternative food options for CMU kids"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	    <meta http-equiv="content-language" content="en-us">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta http-equiv="content-language" content="en-us">
 
-	    <!-- bootstrap CDN -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <!-- bootstrap CDN -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-	</head>
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
-	<body>
+    </head>
 
-		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-		<script>
-		  // Initialize Firebase
-		  var config = {
-		    apiKey: "AIzaSyBLRX9CWoCS5B3lggGB21GOs5K7kjj3tQs",
-		    authDomain: "waimai-915103765.firebaseapp.com",
-		    databaseURL: "https://waimai-915103765.firebaseio.com",
-		    projectId: "waimai-915103765",
-		    storageBucket: "",
-		    messagingSenderId: "816034032111"
-		  };
-		  firebase.initializeApp(config);
-		</script>
+    <body>
+
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyBLRX9CWoCS5B3lggGB21GOs5K7kjj3tQs",
+            authDomain: "waimai-915103765.firebaseapp.com",
+            databaseURL: "https://waimai-915103765.firebaseio.com",
+            projectId: "waimai-915103765",
+            storageBucket: "",
+            messagingSenderId: "816034032111"
+          };
+          firebase.initializeApp(config);
+        </script>
 		
-		<div class="container">
-			<div class="row card">
-				<div class="card-header">
-				Meng Cha
-				</div>
-				<ul class="list-group list-group-flush">
-				<li class="list-group-item stock-num">42 left</li>
-				<li class="list-group-item open-until">Until 12:45pm</li>
-				<li class="list-group-item location">Cyert</li>
-				</ul>
-			</div>
-		</div>
+        <div class="container">
+            <div class="row card">
+                <div class="card-header">
+                Meng Cha
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item stock-num">42 left</li>
+                <li class="list-group-item open-until">Until 12:45pm</li>
+                <li class="list-group-item location">Cyert</li>
+                </ul>
+            </div>
+        </div>
 
-		<div class="container">
-			<div class="row card restaurant-card">
-				<div class="card-header">
-				Fu Cun
-				</div>
-				<ul class="list-group list-group-flush">
-				<li class="list-group-item stock-num">16 left</li>
-				<li class="list-group-item open-until">Until 14:10pm</li>
-				<li class="list-group-item location">Hunt</li>
-				</ul>
-			</div>
-		</div>
+        <div class="container">
+            <div class="row card restaurant-card">
+                <div class="card-header">
+                Fu Cun
+                </div>
+                <ul class="list-group list-group-flush">
+                <li class="list-group-item stock-num">16 left</li>
+                <li class="list-group-item open-until">Until 14:10pm</li>
+                <li class="list-group-item location">Hunt</li>
+                </ul>
+            </div>
+        </div>
 
-		<div class="container">
-			<div class="row">
-				<a class="btn btn-primary" href="map.html" role="button">Go to map view</a>
-			</div>
-		</div>
+        <div class="container">
+            <div class="row">
+                <a class="btn btn-primary" href="map.html" role="button">Go to map view</a>
+            </div>
+        </div>
 
     </body>
 </html>
