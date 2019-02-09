@@ -1,7 +1,11 @@
 function meal_minus_one(username) {
   const db = firebase.firestore()
   const ref = db.collection('users').doc(username)
-  ref.update({ "mealQuantity": mealQuantity -= 1 })
+  ref.get().then(doc => {
+            var old = doc.data().mealQuantity;
+            var newQ = old - 1;
+            ref.update({ "mealQuantity": newQ });
+        });
 }
 
 function sellA(){
