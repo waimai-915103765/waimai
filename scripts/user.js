@@ -63,8 +63,15 @@ function new_user(user_info) {
   }
 
   // TODO properly authenticate user
+  window.localStorage.clear()
   window.localStorage.user = new_user_info.username // persist cross pages but definitely not safe
 
   return 0; // TODO return 1 on error (new user not created)
+}
+
+function login(username, password) {
+  // TODO properly authenticate user
+  window.localStorage.clear()
+  window.localStorage.user = username // fake authentication
 }
 
