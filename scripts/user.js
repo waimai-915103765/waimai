@@ -73,5 +73,7 @@ function login(username, password) {
   // TODO properly authenticate user
   window.localStorage.clear()
   window.localStorage.user = username // fake authentication
+
+  window.location.replace('./index.html')
 }
 
