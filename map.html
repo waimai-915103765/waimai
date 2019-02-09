@@ -22,76 +22,14 @@
 
 		<!-- set site icon <link rel="site icon" href=""> -->
 
-<<<<<<< HEAD
-=======
 	    <!-- bootstrap CDN -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
 
->>>>>>> 542aee65eea8f956173d0fecadc534a83eea90da
 	</head>
 	<body>
-<<<<<<< HEAD
-	<div style="width: 400px; height: 500px" id="mapContainer" class="map"></div>
-	<script>
-			var mapContainer = document.getElementById('map-container');
-			
-			var platform = new H.service.Platform({
-  			app_id: 'xZmxyj2SRvUqNP1Ea97y', 
-  			app_code: 'bxRlLLx05eqG3_9St7H9pw'
-			});
-
-			var HUNTcoordinates = {
-  			lat: 40.442029,
-  			lng: -79.943335
-			};
-
-			// Displaying the map
-			var mapOptions = {
-  			center: HUNTcoordinates,
-  			zoom: 15
-			};
-
-			var defaultLayers = platform.createDefaultLayers();
-
-			var map = new H.Map(
-  			document.getElementById('mapContainer'),
-  			defaultLayers.normal.map,
-  			mapOptions);
-
-			// Resize the map when the window is resized
-			window.addEventListener('resize', function () {
-  			map.getViewPort().resize();
-			});
-			
-			var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-			// Marker with custom icon
-			var iconUrl = './mark-location.png';
-
-			var carLocation = {
-				lat: ,
-				lng:
-			};
-			
-			var iconOptions = {
-			  size: new H.math.Size(26, 34),
-			  anchor: new H.math.Point(14, 34)
-			};
-
-			var markerOptions = {
-			   icon: new H.map.Icon(iconUrl, iconOptions)
-			};
-
-			var marker = new H.map.Marker(carLocation, markerOptions);
-			map.addObject(marker);
-
-	</script>
-	</body>
-</html>
-=======
 
 		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 		<script>
@@ -121,4 +59,3 @@
 
     </body>
 </html>
->>>>>>> 542aee65eea8f956173d0fecadc534a83eea90da
