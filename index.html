@@ -18,13 +18,14 @@
         </script>
       <script src='./scripts/user.js'></script>
       <script>
-if (!window.localStorage.user || window.localStorage.user === '')
-  window.location.replace('./login.html')
-else if (is_biz(window.localStorage.user))
-  window.location.replace('./biz-overview.html')
-else
-  window.location.replace('./list.html')
+          if (!window.localStorage.user || window.localStorage.user === '')
+            window.location.replace('./login.html')
+          else if (is_biz(window.localStorage.user))
+            window.location.replace('./biz-overview.html')
+          else
+            window.location.replace('./list.html')
       </script>
+      <link rel="site icon" href="waimai.png">
     </head>
     <body></body>
 </html>

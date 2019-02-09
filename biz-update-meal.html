@@ -18,6 +18,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
+        <link rel="site icon" href="waimai.png">
 
     </head>
 
@@ -80,6 +81,7 @@
                 <label for="meal-description-C">Description for Meal C</label>
                 <textarea class="form-control" id="meal-description-C" rows="3"></textarea>
             </div>
+            <button id='submit' class='btn btn-primary'>Submit</button>
         </form>
 
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
@@ -95,5 +97,6 @@
           };
           firebase.initializeApp(config);
         </script>
+        <script src='./scripts/biz-meal.js'></script>
     </body>
 </html>
