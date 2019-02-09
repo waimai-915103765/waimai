@@ -106,40 +106,55 @@ h3 {
                 <label for="meal-description-B">Description for Meal B</label>
                 <textarea class="form-control" id="meal-description-B" rows="3"></textarea>
             </div>
-            
+
             <script>
                 function update_meals() {
                   const db = firebase.firestore()
                   const ref = db.collection('users').doc(window.localStorage.user)
                   var newAname = document.getElementById('meal-name-A').value;
                   if (newAname != ""){
-                        ref.update({ "mealAq": document.getElementById('stock-A').value });
-                        ref.update({ "mealAName": newAname });
-                        ref.update({ "priceA": document.getElementById('price-A').value });
-                        ref.update({ "descriptionA": document.getElementById('meal-description-A').value });
+                    ref.update({ "mealAq": document.getElementById('stock-A').value }).then(() => {
+                      return ref.update({ "mealAName": newAname });
+                    }).then(() => {
+                        return ref.update({ "priceA": document.getElementById('price-A').value });
+                    }).then(() => {
+                        return ref.update({ "descriptionA": document.getElementById('meal-description-A').value });
+                    }).then(() => {
+                      return update_mealB()
+                    }).then(() => {window.location.href='./selling.html'})
+                    } else{
+                      ref.update({ "mealAq": 0 }).then(() => {
+                        return ref.update({ "mealAName": "" });
+                      }).then(() => {
+                        return ref.update({ "priceA": 0 });
+                      }).then(() => {
+                        return ref.update({ "descriptionA": "" });
+                      }).then(() => {window.location.href='./selling.html'})
                     }
-                    else{
-                        ref.update({ "mealAq": 0 });
-                        ref.update({ "mealAName": "" });
-                        ref.update({ "priceA": 0 });
-                        ref.update({ "descriptionA": "" });
-                    }
+                  function update_mealB() {
                     var newBname =document.getElementById('meal-name-B').value
                     if (newBname != ""){
-                    ref.update({ "mealBq": document.getElementById('stock-B').value });
-                    ref.update({ "mealBName": newBname });
-                    ref.update({ "priceB": document.getElementById('price-B').value });
-                    ref.update({ "descriptionB": document.getElementById('meal-description-B').value });
+                      return ref.update({ "mealBq": document.getElementById('stock-B').value }).then(() => {
+                        return ref.update({ "mealBName": newBname });
+                      }).then(() => {
+                        return ref.update({ "priceB": document.getElementById('price-B').value });
+                      }).then(() => {
+                        return ref.update({ "descriptionB": document.getElementById('meal-description-B').value });
+                      })
                     }
                     else{
-                    ref.update({ "mealBq": 0 });
-                    ref.update({ "mealBName": "" });
-                    ref.update({ "priceB": 0 });
-                    ref.update({ "descriptionB": "" });
+                      return ref.update({ "mealBq": 0 }).then(() => {
+                        return ref.update({ "mealBName": "" });
+                      }).then(() => {
+                        return ref.update({ "priceB": 0 });
+                      }).then(() => {
+                        return ref.update({ "descriptionB": "" });
+                      })
                     }
+                  }
                 }
             </script>
-            <button onclick = "update_meals();" id='submit' class='btn btn-primary'>Submit</button>
+            <a onclick = "update_meals();" id='submit' class='btn btn-primary'>Submit</a>
         </form>
 
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
@@ -155,6 +170,5 @@ h3 {
           };
           firebase.initializeApp(config);
         </script>
-        <script src='./scripts/biz-meal.js'></script>
     </body>
 </html>
