@@ -22,8 +22,6 @@
     </head>
 
     <body>
-      <script src='./scripts/user.js'></script>
-
         <form>
             <div class="form-group">
                 <label for="exampleInputUsername">Username</label>
@@ -34,7 +32,7 @@
                 <label for="exampleInputPassword">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-primary">Log In</button>
+            <a id='login' class="btn btn-primary text-white">Log In</a>
             <button href="register.html" class="btn btn-primary">Register</button>
         </form>
 
@@ -51,5 +49,16 @@
           };
           firebase.initializeApp(config);
         </script>
+      <script src='./scripts/user.js'></script>
+
+      <script>
+const login_btn = document.getElementById('login')
+login_btn.addEventListener('click', function () {
+  const username = document.getElementById('exampleInputUsername').value
+  const password = document.getElementById('exampleInputPassword').value
+  login(username, password) // perform login action
+})
+      </script>
+
     </body>
 </html>
