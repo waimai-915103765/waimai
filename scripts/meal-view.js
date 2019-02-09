@@ -30,3 +30,51 @@ function update_meals() {
     ref.update({ "descriptionB": "" });
     }
 }
+
+function mealA_Name(username){
+    const db = firebase.firestore()
+    const ref = db.collection('users').doc(username)
+    return ref.get().then(doc => doc.data().mealAName)
+}
+
+function mealB_Name(username){
+    const db = firebase.firestore()
+    const ref = db.collection('users').doc(username)
+    return ref.get().then(doc => doc.data().mealBName)
+}
+
+function mealA_Price(username){
+    const db = firebase.firestore()
+    const ref = db.collection('users').doc(username)
+    return ref.get().then(doc => doc.data().priceA)
+}
+
+function mealB_Price(username){
+    const db = firebase.firestore()
+    const ref = db.collection('users').doc(username)
+    return ref.get().then(doc => doc.data().priceB)
+}
+
+function mealA_Quantity(username){
+    const db = firebase.firestore()
+    const ref = db.collection('users').doc(username)
+    return ref.get().then(doc => doc.data().mealAq)
+}
+
+function mealB_Quantity(username){
+    const db = firebase.firestore()
+    const ref = db.collection('users').doc(username)
+    return ref.get().then(doc => doc.data().mealBq)
+}
+
+function mealA_Descrip(username){
+    const db = firebase.firestore()
+    const ref = db.collection('users').doc(username)
+    return ref.get().then(doc => doc.data().descriptionA)
+}
+
+function mealB_Descrip(username){
+    const db = firebase.firestore()
+    const ref = db.collection('users').doc(username)
+    return ref.get().then(doc => doc.data().descriptionB)
+}
