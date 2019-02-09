@@ -51,6 +51,13 @@ body {
   background-color: var(--primary-color);
   color: white;
 }
+.dead {
+  width: 62px;
+  margin-left: 30px;
+}
+.dead:hover {
+  background-color: var(--primary-color);
+}
 h3 {
   margin: 30px 0;
   padding-bottom: 20px;
@@ -108,13 +115,25 @@ h3 {
 
             <div class="row">
                 <button class='btn btn-primary' onclick = "sellA();"> Sell Meal A </button>
+                <button id='mealA-stock' class='btn dead' disabled>0</button>
             </div>
 
             <div class="row">
                 <button class='btn btn-primary' onclick = "sellB();"> Sell Meal B </button>
+                <button id='mealB-stock' class='btn dead' disabled>0</button>
             </div>
 
         </form>
+
+      <script>
+        const db = firebase.firestore()
+        const ref = db.collection('users').doc(localStorage.user)
+        ref.onSnapshot(doc => {
+          document.getElementById('mealA-stock').innerHTML = doc.data().mealAq
+          document.getElementById('mealB-stock').innerHTML = doc.data().mealBq
+        })
+      </script>
+
     </body>
 
 </html>
