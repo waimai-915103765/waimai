@@ -4,8 +4,14 @@
 
         <title>Wai Mai</title>
 
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+        <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+
         <meta name="keywords" content="chinese food, CMU, wai mai" />
-        <meta name="author" content="Wai Mai Co">
+        <meta name="author" content="Crystal" >
         <meta name="description" content="Alternative food options for CMU kids"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,53 +19,88 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta http-equiv="content-language" content="en-us">
 
-        <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-        <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-        <script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-
         <!-- bootstrap CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-        
+
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
+
+        <link rel="stylesheet" href="css/map.css" type="text/css">
         <link rel="site icon" href="waimai.png">
 
     </head>
-
     <body>
-        <script src='./scripts/db.js'></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyBLRX9CWoCS5B3lggGB21GOs5K7kjj3tQs",
+            authDomain: "waimai-915103765.firebaseapp.com",
+            databaseURL: "https://waimai-915103765.firebaseio.com",
+            projectId: "waimai-915103765",
+            storageBucket: "",
+            messagingSenderId: "816034032111"
+          };
+          firebase.initializeApp(config);
+        </script>
+
+    <script src='./scripts/db.js'></script>
         <script src='./scripts/selling.js'></script>
         <div class="container">
             <div class="row">
                 <button onclick = "store_location();">Update My Location </button>
+            </div>
+            <script>
+                function store_location(){
+                    var platform = new H.service.Platform(
+                                    {
+                                        "app_id": "xZmxyj2SRvUqNP1Ea97y",
+                                        "app_code": "bxRlLLx05eqG3_9St7H9pw"
+                                    });
+                    var geocoder = platform.getGeocodingService();
+
+                    if(navigator.geolocation){
+                        navigator.geolocation.getCurrentPosition
+                        (position => 
+                            {
+                                var newCor = {
+                                    lat: position.coords.latitude,
+                                    long: position.coords.longitude
+                                };
+                                set_loc(window.localStorage.user, newCor);
+                            }
+                        );
+                    } else{
+                        console.error("Geolocation is not supported by this browser!");
+                    }
+                }
+            </script>
+
+            <div class="row">
+                <button onclick = "sellA();"> Sell Meal A </button>
+<<<<<<< HEAD
+=======
                 <script>
-                    function store_location(){
-                        var platform = new H.service.Platform(
-                        {
-                            "app_id": "xZmxyj2SRvUqNP1Ea97y",
-                            "app_code": "bxRlLLx05eqG3_9St7H9pw"
-                        });
-                        var geocoder = platform.getGeocodingService();
-                        console.log(window.localstorage.user);
-                        if(navigator.geolocation){
-                                console.log(window.localstorage.user);
-                                navigator.geolocation.getCurrentPosition
-                                (position => 
-                                    set_loc(window.localstorage.user, position));
-                        } else{
-                            console.error("Geolocation is not supported by this browser!");
-                        }
+                    function sellA(){
+<<<<<<< HEAD
+                        var userInfo = user_info(window.localstorage.user);
+
                     }
                 </script>
             </div>
 
             <div class="row">
-                <button onclick = "sellA();"> Sell Meal A </button>
+                <button onclick = "sellB();"> Sell Meal B </button>
                 <script>
-                    function sellA(){
+                    function sellB(){
+                        var userInfo = user_info(window.localstorage.user);
+=======
                         meal_minus_one(window.localstorage.user);
+>>>>>>> 470ccd2f528be607cf4e4aba65690ae8501d5d88
                     }
                 </script>
+>>>>>>> a0d7c5f51d119e66680ea0a9481561bd97ad4aaa
             </div>
 
         </form>
