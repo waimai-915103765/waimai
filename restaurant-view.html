@@ -43,13 +43,30 @@ body {
   color: white;
   margin-top: 30px;
 }
-#header {
-  font-size: 150%;
-  padding: 0 0 20px;
-}
+
 .card-header {
   background-color: var(--primary-color-dark);
 }
+.list-group {
+  background-color: var(--primary-color-dark);
+}
+.list-group-item {
+  color: black;
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.restaurant-name {
+    font-size: 200%;
+}
+
+.stock-num {
+    font-size: 200%;
+}
+
+}
+
 </style>
     </head>
 
@@ -68,28 +85,28 @@ body {
           firebase.initializeApp(config);
         </script>
 
-        <div id='header'>
-                                <div class="container">
-                                    <div class="row restaurant-name">
-                                        Meng Cha
-                                    </div>
-                                </div>
-                                <div class="container">
-                                    <div class="row restaurant-stock">
-                                        42 Left
-                                    </div>
-                                </div>
-                                <div class="container">
-                                    <div class="row restaurant-open-until">
-                                        until 12:45pm
-                                    </div>
-                                </div>
-                                <div class="container">
-                                    <div class="row restaurant-location">
-                                        Cyert
-                                    </div>
-                                </div>
-        </div>
+        <a href="list.html" id="header" class="container card">
+            <div class="restaurant-card">
+                <div class="row d-flex justify-content-between">
+                    <div>
+                        <span class="restaurant-name">萌茶</span>
+                    </div>
+                    <div>
+                        <span class="stock-num">42</span>
+                        <span class="stock-num-text"> left</span>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    <div>
+                        <span class="open-until-text">until </span>
+                        <span class="open-until">12:45pm</span>
+                    </div>
+                    <div>
+                        <span class="location">Cyert</span>
+                    </div>
+                </div>
+            </div>
+        </a>
 
         <div class="container">
             <div class="row card meal-card">

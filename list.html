@@ -23,28 +23,38 @@
         <link rel="stylesheet" href="css/list.css" type="text/css">
         <link rel="site icon" href="waimai.png">
 
-<style>
-body {
-  padding: 50px 5%;
-  --primary-color: #ff922b;
-  --primary-color-dark: #e8590c;
-}
-.btn {
-  margin-top: 30px;
-  border: none;
-  background-color: var(--primary-color);
-  color: white;
-}
-.btn:hover, .card:hover {
-  background-color: var(--primary-color-dark);
-}
-.card {
-  padding: 10px 20px;
-  border: none;
-  background-color: var(--primary-color);
-  color: white;
-}
-</style>
+        <style>
+        body {
+          padding: 50px 5%;
+          --primary-color: #ff922b;
+          --primary-color-dark: #e8590c;
+        }
+        .btn {
+          margin-top: 30px;
+          border: none;
+          background-color: var(--primary-color);
+          color: white;
+        }
+        .btn:hover, .card:hover {
+          background-color: var(--primary-color-dark);
+        }
+        .card {
+          padding: 10px 20px;
+          border: none;
+          background-color: var(--primary-color);
+          color: white;
+        }
+        .row {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        .restaurant-name {
+            font-size: 200%;
+        }
+        .stock-num {
+            font-size: 200%;
+        }
+        </style>
     </head>
 
     <body>
@@ -63,11 +73,11 @@ body {
           firebase.initializeApp(config);
         </script>
 
-        <div class="container">
+        <a href="restaurant-view.html" class="container">
             <div class="card restaurant-card mt-2 ml-2 mr-2">
                 <div class="row mt-2 d-flex justify-content-between">
                     <div>
-                        <span class="restaurant-name">Meng Cha</span>
+                        <span class="restaurant-name">萌茶</span>
                     </div>
                     <div>
                         <span class="stock-num">42</span>
@@ -84,9 +94,9 @@ body {
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="container">
+        <a class="container">
             <div class="card restaurant-card mt-2 ml-2 mr-2">
                 <div class="row d-flex justify-content-between">
                     <div>
@@ -107,8 +117,7 @@ body {
                     </div>
                 </div>
             </div>
-
-        </div>
+        </a>
 
         <div class="container">
             <div class="row mt-2 ml-2 mr-2">
