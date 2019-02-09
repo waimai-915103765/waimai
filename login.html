@@ -81,6 +81,28 @@
         <script src='./scripts/user.js'></script>
 
         <script>
+          function login(username, password) {
+            // TODO properly authenticate user
+            window.localStorage.clear()
+            window.localStorage.user = username // fake authentication
+
+            const db = firebase.firestore()
+            const ref = db.collection('users').doc(username)
+            ref.get().then(doc => {
+              if (doc.exists) {
+                console.log("you are here")
+                if (doc.data().user_type){
+                  console.log("82")
+                  window.location.replace('./biz-overview.html')
+                }
+                else
+                {
+                  console.log("hello")
+                  window.location.replace('./map.html')
+                }
+              }
+            })
+          }
             const login_btn = document.getElementById('login')
             login_btn.addEventListener('click', function () {
               const username = document.getElementById('exampleInputUsername').value

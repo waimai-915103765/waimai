@@ -3,7 +3,13 @@ function mealA_minus_one(username) {
   const ref = db.collection('users').doc(username)
   ref.get().then(doc => {
             var old = doc.data().mealAq;
-            var newQ = old - 1;
+            var newQ;
+            if (old >= 1) {
+              newQ = old - 1;
+            }
+            else{
+              newQ = 0;
+            }
             ref.update({ "mealAq": newQ });
         });
 }
@@ -17,7 +23,13 @@ function mealB_minus_one(username) {
   const ref = db.collection('users').doc(username)
   ref.get().then(doc => {
             var old = doc.data().mealBq;
-            var newQ = old - 1;
+            var newQ;
+            if (old >= 1) {
+              newQ = old - 1;
+            }
+            else{
+              newQ = 0;
+            }
             ref.update({ "mealBq": newQ });
         });
 }
