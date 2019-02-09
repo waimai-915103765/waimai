@@ -78,10 +78,15 @@ function login(username, password) {
   const ref = db.collection('users').doc(username)
   ref.get().then(doc => {
     if (doc.exists) {
-      if (doc.data().user_type)
+      if (doc.data().user_type){
+        console.log("82")
         window.location.replace('./biz-overview.html')
+      }
       else
+      {
+        console.log("hello")
         window.location.replace('./map.html')
+      }
     }
   })
 }
