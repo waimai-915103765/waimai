@@ -44,8 +44,8 @@
 			});
 
 			var HUNTcoordinates = {
-  			lat: 40.442029,
-  			lng: -79.943335
+  			lat: 40.441526,
+  			lng: -79.943712
 			};
 
 			// Displaying the map
@@ -67,27 +67,6 @@
 			});
 			
 			var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-			// Marker with custom icon
-			var iconUrl = './mark-location.png';
-
-			var carLocation = {
-				lat: ,
-				lng:
-			};
-			
-			var iconOptions = {
-			  size: new H.math.Size(26, 34),
-			  anchor: new H.math.Point(14, 34)
-			};
-
-			var markerOptions = {
-			   icon: new H.map.Icon(iconUrl, iconOptions)
-			};
-
-			var marker = new H.map.Marker(carLocation, markerOptions);
-			map.addObject(marker);
-
 	</script>
 	</body>
 </html>
