@@ -43,15 +43,14 @@
   			app_code: 'bxRlLLx05eqG3_9St7H9pw'
 			});
 
-			var HEREHQcoordinates = {
-  			// HERE HQ in Berlin, Germany:
-  			lat: 40.440929,
-  			lng: -79.944264
+			var HUNTcoordinates = {
+  			lat: 40.442029,
+  			lng: -79.943335
 			};
 
 			// Displaying the map
 			var mapOptions = {
-  			center: HEREHQcoordinates,
+  			center: HUNTcoordinates,
   			zoom: 15
 			};
 
@@ -68,6 +67,27 @@
 			});
 			
 			var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+			// Marker with custom icon
+			var iconUrl = './mark-location.png';
+
+			var carLocation = {
+				lat: ,
+				lng:
+			};
+			
+			var iconOptions = {
+			  size: new H.math.Size(26, 34),
+			  anchor: new H.math.Point(14, 34)
+			};
+
+			var markerOptions = {
+			   icon: new H.map.Icon(iconUrl, iconOptions)
+			};
+
+			var marker = new H.map.Marker(carLocation, markerOptions);
+			map.addObject(marker);
+
 	</script>
 	</body>
 </html>
