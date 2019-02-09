@@ -30,63 +30,7 @@
 
 	</head>
 	<body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-	<div style="width: 400px; height: 500px" id="mapContainer" class="map"></div>
-	<script>
-			var mapContainer = document.getElementById('map-container');
-			
-			var platform = new H.service.Platform({
-  			app_id: 'xZmxyj2SRvUqNP1Ea97y', 
-  			app_code: 'bxRlLLx05eqG3_9St7H9pw'
-			});
 
-			var HUNTcoordinates = {
-  			lat: 40.442029,
-  			lng: -79.943335
-			};
-
-			// Displaying the map
-			var mapOptions = {
-  			center: HUNTcoordinates,
-  			zoom: 15
-			};
-
-			var defaultLayers = platform.createDefaultLayers();
-
-			var map = new H.Map(
-  			document.getElementById('mapContainer'),
-  			defaultLayers.normal.map,
-  			mapOptions);
-
-			// Resize the map when the window is resized
-			window.addEventListener('resize', function () {
-  			map.getViewPort().resize();
-			});
-			
-			var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
-
-			// Marker with custom icon
-			var iconUrl = './mark-location.png';
-
-			var iconOptions = {
-			  size: new H.math.Size(27, 27),
-			  anchor: new H.math.Point(14, 34)
-			};
-
-			var markerOptions = {
-			   icon: new H.map.Icon(iconUrl, iconOptions)
-			};
-
-			var marker = new H.map.Marker(HUNTcoordinates, markerOptions);
-			map.addObject(marker);
-
-	</script>
-	</body>
-</html>
-=======
-=======
->>>>>>> refs/remotes/origin/master
 
 		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 		<script>
@@ -104,7 +48,55 @@
 
 		<div class="container">
 			<div class="row">
-				map placeholder
+					<div style="width: 400px; height: 500px" id="mapContainer" class="map"></div>
+						<script>
+							var mapContainer = document.getElementById('map-container');
+							
+							var platform = new H.service.Platform({
+				  			app_id: 'xZmxyj2SRvUqNP1Ea97y', 
+				  			app_code: 'bxRlLLx05eqG3_9St7H9pw'
+							});
+
+							var HUNTcoordinates = {
+				  			lat: 40.442029,
+				  			lng: -79.943335
+							};
+
+							// Displaying the map
+							var mapOptions = {
+				  			center: HUNTcoordinates,
+				  			zoom: 15
+							};
+
+							var defaultLayers = platform.createDefaultLayers();
+
+							var map = new H.Map(
+				  			document.getElementById('mapContainer'),
+				  			defaultLayers.normal.map,
+				  			mapOptions);
+
+							// Resize the map when the window is resized
+							window.addEventListener('resize', function () {
+				  			map.getViewPort().resize();
+							});
+							
+							var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
+
+							// Marker with custom icon
+							var iconUrl = './mark-location.png';
+
+							var iconOptions = {
+							  size: new H.math.Size(27, 27),
+							  anchor: new H.math.Point(14, 34)
+							};
+
+							var markerOptions = {
+							   icon: new H.map.Icon(iconUrl, iconOptions)
+							};
+
+							var marker = new H.map.Marker(HUNTcoordinates, markerOptions);
+							map.addObject(marker);
+						</script>
 			</div>
 		</div>
 
