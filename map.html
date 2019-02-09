@@ -92,7 +92,7 @@
 							   icon: new H.map.Icon(iconUrl, iconOptions)
 							};
 
-							var carCoordinates = window.localstorage.user.location;
+							var carCoordinates = get_loc(window.localstorage.user);
 
 							var marker = new H.map.Marker(carCoordinates, markerOptions);
 							map.addObject(marker);

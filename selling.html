@@ -38,7 +38,7 @@
                 var geocoder = platform.getGeocodingService();
                 if(navigator.geolocation){
                         navigator.geolocation.getCurrentPosition(position => 
-                            localStorage.setItem(window.localStorage.user.location, position));
+                            set_loc(window.localstorage.user, position));
                 } else{
                     console.error("Geolocation is not supported by this browser!");
                 }
