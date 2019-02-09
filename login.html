@@ -19,16 +19,42 @@
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
         <link rel="site icon" href="waimai.png">
+
+        <style>
+        body {
+          padding-left: 10%;
+          padding-right: 10%;
+          --primary-color: #ff922b;
+          --primary-color-dark: #e8590c;
+        }
+        h1 {
+          margin: 100px 0;
+          width: 62%;
+          border-bottom: 6.2px solid var(--primary-color);
+        }
+        label {
+          width: 100%;
+          text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        .btn {
+          background-color: var(--primary-color);
+          border: none;
+        }
+        .btn:hover {
+          background-color: var(--primary-color-dark);
+        }
+        </style>
     </head>
 
     <body>
-        <nav class="navbar navbar-light bg-light">
-        <span class="navbar-brand h1">Log In</span>
-        </nav>
-        <form class="ml-3 mr-3" style="text-align:center">
+      <h1>Wai Mai</h1>
+        <form>
             <div class="form-group">
                 <label for="exampleInputUsername">Username</label>
-                <input type="username" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Username">
+                <input type="username" class="form-control" id="exampleInputUsername" aria-describedby="usernameHelp" placeholder="Enter username">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword">Password</label>

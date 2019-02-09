@@ -20,6 +20,31 @@
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
         <link rel="site icon" href="waimai.png">
 
+        <style>
+
+        body {
+          padding-left: 10%;
+          padding-right: 10%;
+          --primary-color: #ff922b;
+          --primary-color-dark: #e8590c;
+        }
+
+        label {
+          width: 100%;
+          text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        .btn {
+          background-color: var(--primary-color);
+          border: none;
+        }
+        .btn:hover {
+          background-color: var(--primary-color-dark);
+        }
+        </style>
+
     </head>
 
     <body>
@@ -46,7 +71,7 @@
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
         <script>
