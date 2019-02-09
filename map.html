@@ -30,11 +30,6 @@
 
 	</head>
 	<body>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 9377ff3e239aa8b8ee66d2496225b0c2f259e38b
 		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
 		<script>
 		  // Initialize Firebase
@@ -51,7 +46,7 @@
 
 		<div class="container">
 			<div class="row">
-					<div style="width: 400px; height: 500px" id="mapContainer" class="map"></div>
+					<div style="width: 500px; height: 800px" id="mapContainer" class="map"></div>
 						<script>
 							var mapContainer = document.getElementById('map-container');
 							
@@ -97,8 +92,14 @@
 							   icon: new H.map.Icon(iconUrl, iconOptions)
 							};
 
-							var marker = new H.map.Marker(HUNTcoordinates, markerOptions);
-							map.addObject(marker);
+							var userList = all_biz();
+
+							for (var i = userList.length - 1; i >= 0; i--) {
+								var carCoordinates = get_loc(userList[i]);
+								var marker = new H.map.Marker(carCoordinates, markerOptions);
+								map.addObject(marker);
+							}
+							
 						</script>
 			</div>
 		</div>
