@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
 
-        <title>Wai Mai</title>
+        <title>Register - Wai Mai</title>
 
         <meta name="keywords" content="chinese food, CMU, wai mai" />
         <meta name="author" content="Wai Mai Co">
@@ -20,25 +20,58 @@
         <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
         <link rel="site icon" href="waimai.png">
 
+        <style>
+
+        body {
+          padding-left: 10%;
+          padding-right: 10%;
+          --primary-color: #ff922b;
+          --primary-color-dark: #e8590c;
+        }
+
+        label {
+          width: 100%;
+          text-align: center;
+        }
+        form {
+            text-align: center;
+        }
+        .btn {
+          background-color: var(--primary-color);
+          border: none;
+        }
+        .btn:hover {
+          background-color: var(--primary-color-dark);
+        }
+        </style>
+
     </head>
 
     <body>
 
-        <form>
+        <form class="ml-3 mr-3 mt-3 mb-3" style="text-align:center">
         <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
+        <label for="exampleInputUsername">Username</label>
+        <input type="username" class="form-control" id="exampleInputUsername" placeholder="Username">
+        </div>
+        <div class="form-group">
+        <label for="exampleInputFirstname">First Name</label>
+        <input type="firstname" class="form-control" id="exampleInputFirstname" placeholder="firstname">
+        </div>
+        <div class="form-group">
+        <label for="exampleInputLastname">Last Name</label>
+        <input type="lastname" class="form-control" id="exampleInputLastname" placeholder="lastname">
+        </div>
+        <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
         </div>
-        <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
         <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
         <script>
