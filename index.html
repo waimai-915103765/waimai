@@ -1,7 +1,30 @@
 <!doctype html>
 <html>
     <head>
-        <script> window.location.replace('./login.html') </script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyBLRX9CWoCS5B3lggGB21GOs5K7kjj3tQs",
+            authDomain: "waimai-915103765.firebaseapp.com",
+            databaseURL: "https://waimai-915103765.firebaseio.com",
+            projectId: "waimai-915103765",
+            storageBucket: "",
+            messagingSenderId: "816034032111"
+          };
+          firebase.initializeApp(config);
+        </script>
+      <script src='./scripts/user.js'></script>
+      <script>
+if (!window.localStorage.user || window.localStorage.user === '')
+  window.location.replace('./login.html')
+else if (is_biz(window.localStorage.user))
+  window.location.replace('./biz-overview.html')
+else
+  window.location.replace('./list.html')
+      </script>
     </head>
     <body></body>
 </html>

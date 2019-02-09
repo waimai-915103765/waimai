@@ -73,5 +73,15 @@ function login(username, password) {
   // TODO properly authenticate user
   window.localStorage.clear()
   window.localStorage.user = username // fake authentication
-}
 
+  const db = firebase.firestore()
+  const ref = db.collection('users').doc(username)
+  ref.get().then(doc => {
+    if (doc.exists) {
+      if (doc.data().user_type)
+        window.location.replace('./biz-overview.html')
+      else
+        window.location.replace('./map.html')
+    }
+  })
+}
