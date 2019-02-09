@@ -4,13 +4,13 @@
 	<head>
 
 		<title>Wai Mai</title>
-		
+
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		<script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
 		<script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
 	 	<script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
 		<script type="text/javascript" charset="UTF-8" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
- 		 
+
 		<meta name="keywords" content="chinese food, CMU, wai mai" />
 		<meta name="author" content="Crystal" >
 		<meta name="description" content="Alternative food options for CMU kids"/>
@@ -44,14 +44,16 @@
 		  firebase.initializeApp(config);
 		</script>
 
+    <script src='./scripts/db.js'></script>
+
 		<div class="container">
 			<div class="row">
 					<div style="width: 500px; height: 800px" id="mapContainer" class="map"></div>
 						<script>
 							var mapContainer = document.getElementById('map-container');
-							
+
 							var platform = new H.service.Platform({
-				  			app_id: 'xZmxyj2SRvUqNP1Ea97y', 
+				  			app_id: 'xZmxyj2SRvUqNP1Ea97y',
 				  			app_code: 'bxRlLLx05eqG3_9St7H9pw'
 							});
 
@@ -77,7 +79,7 @@
 							window.addEventListener('resize', function () {
 				  			map.getViewPort().resize();
 							});
-							
+
 							var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
 
 							// Marker with custom icon
@@ -99,7 +101,7 @@
 								var marker = new H.map.Marker(carCoordinates, markerOptions);
 								map.addObject(marker);
 							}
-							
+
 						</script>
 			</div>
 		</div>
