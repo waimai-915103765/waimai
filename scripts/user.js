@@ -62,6 +62,9 @@ function new_user(user_info) {
     ref.set(new_user_info).then(function () { console.log(new_user_info.username + ' in database') })
   }
 
+  // TODO properly authenticate user
+  window.localStorage.user = new_user_info.username // persist cross pages but definitely not safe
+
   return 0; // TODO return 1 on error (new user not created)
 }
 
