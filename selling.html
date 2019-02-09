@@ -26,24 +26,47 @@
     </head>
 
     <body>
+        <div class="container">
+            <div class="row">
+                <button onclick = "store_location();">Update My Location </button>
+                <script>
+                    function store_location(){
+                        var platform = new H.service.Platform(
+                        {
+                            "app_id": "xZmxyj2SRvUqNP1Ea97y",
+                            "app_code": "bxRlLLx05eqG3_9St7H9pw"
+                        });
+                        var geocoder = platform.getGeocodingService();
+                        if(navigator.geolocation){
+                                navigator.geolocation.getCurrentPosition(position => 
+                                    set_loc(window.localstorage.user, position));
+                        } else{
+                            console.error("Geolocation is not supported by this browser!");
+                        }
+                    }
+                </script>
+            </div>
 
-        <button onclick = "store_location();">Update My Location </button>
-        <script>
-            function store_location(){
-                var platform = new H.service.Platform(
-                {
-                    "app_id": "xZmxyj2SRvUqNP1Ea97y",
-                    "app_code": "bxRlLLx05eqG3_9St7H9pw"
-                });
-                var geocoder = platform.getGeocodingService();
-                if(navigator.geolocation){
-                        navigator.geolocation.getCurrentPosition(position => 
-                            set_loc(window.localstorage.user, position));
-                } else{
-                    console.error("Geolocation is not supported by this browser!");
-                }
-            }
-        </script>
+            <div class="row">
+                <button onclick = "sellA();"> Sell Meal A </button>
+                <script>
+                    function sellA(){
+                        var userInfo = user_info(window.localstorage.user);
+
+                    }
+                </script>
+            </div>
+
+            <div class="row">
+                <button onclick = "sellB();"> Sell Meal B </button>
+                <script>
+                    function sellB(){
+                        var userInfo = user_info(window.localstorage.user);
+
+                    }
+                </script>
+            </div>
+
         </form>
     </body>
 
