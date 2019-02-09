@@ -16,10 +16,26 @@
 	    <!-- bootstrap CDN -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
 
 	</head>
 
 	<body>
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBLRX9CWoCS5B3lggGB21GOs5K7kjj3tQs",
+		    authDomain: "waimai-915103765.firebaseapp.com",
+		    databaseURL: "https://waimai-915103765.firebaseio.com",
+		    projectId: "waimai-915103765",
+		    storageBucket: "",
+		    messagingSenderId: "816034032111"
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		
 		<div class="container">
 			<div class="row restaurant-name">
 				Meng Cha
