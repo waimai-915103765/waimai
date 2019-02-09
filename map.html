@@ -97,7 +97,12 @@
 							all_biz().then(list => {
 								list.forEach(biz => {
 									get_loc(biz.username).then(carCoordinates => {
-										var marker = new H.map.Marker(carCoordinates, markerOptions);
+										console.log(carCoordinates);
+										var carCoor = {
+								  			lat: carCoordinates._lat,
+								  			lng: carCoordinates._long
+										};
+										var marker = new H.map.Marker(carCoor, markerOptions);
 										map.addObject(marker);
 									})
 								})
