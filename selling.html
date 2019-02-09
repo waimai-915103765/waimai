@@ -26,18 +26,24 @@
     </head>
 
     <body>
-        <script>
-            var update_location_buttom = document.getElementById('updateLocationButtom');
-            update_location_buttom.onclick = update_location;
 
-            function update_location(){
-              var input = localStorage.user;
-              localStorage.setItem("server", input.value);
-              var storedValue = localStorage.getItem("server");
+        <button onclick = "store_location();">Update My Location </button>
+        <script>
+            function store_location(){
+                var platform = new H.service.Platform(
+                {
+                    "app_id": "xZmxyj2SRvUqNP1Ea97y",
+                    "app_code": "bxRlLLx05eqG3_9St7H9pw"
+                });
+                var geocoder = platform.getGeocodingService();
+                if(navigator.geolocation){
+                        navigator.geolocation.getCurrentPosition(position => 
+                            localStorage.setItem(window.localStorage.user.location, position));
+                } else{
+                    console.error("Geolocation is not supported by this browser!");
+                }
             }
         </script>
-        
-        <button name = "Update Location" type="submit" value="Submit">Update My Location</button>
         </form>
     </body>
 
